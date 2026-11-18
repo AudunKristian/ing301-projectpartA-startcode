@@ -12,6 +12,45 @@ class Measurement:
 
 # TODO: Add your own classes here!
 
+class Building:
+    """
+    This class represents a building in the SmartHouse system.
+    """
+
+    def __init__(self, name, number_of_floors):
+        self.name = name
+        self.number_of_floors = number_of_floors
+
+class Floor:
+    """
+    This class represents a floor in the SmartHouse system.
+    """
+
+    def __init__(self, level, building):
+        self.level = level
+        self.building = building
+
+
+class Room:
+    """
+    This class represents a room in the SmartHouse system.
+    """
+
+    def __init__(self, name, area, floor):
+        self.name = name
+        self.area = area
+        self.floor = floor
+
+class Device:
+    """
+    This class represents a device in the SmartHouse system.
+    """
+
+    def __init__(self, device_id, name, room):
+        self.device_id = device_id
+        self.name = name
+        self.room = room
+        self.state = None  # Initial state of the device
 
 class SmartHouse:
     """
@@ -28,6 +67,7 @@ class SmartHouse:
         This method registers a new floor at the given level in the house
         and returns the respective floor object.
         """
+        
 
     def register_room(self, floor, room_size, room_name = None):
         """
